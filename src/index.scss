@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+
+:root {
+  // Colors
+
+  /// Primary
+
+  --grayish-blue: hsl(237, 18%, 59%);
+  --soft-red: hsl(345, 95%, 68%);
+
+  /// Neutral
+
+  --white: white;
+  --dark-desaturated-blue: hsl(236, 21%, 26%);
+  --very-dark-blue: hsl(235, 16%, 14%);
+  --blackish: hsl(234, 17%, 12%);
+
+  // Typography
+
+  /// Body Copy
+
+  --fs-medium: 14px;
+
+  /// Font
+
+  --fw-regular: 700;
+}
+
+/* makes sizing simpler */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Red Hat Text", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
