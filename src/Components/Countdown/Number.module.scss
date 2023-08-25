@@ -1,0 +1,9 @@
+.number {
+  transform: rotate(360deg);
+  transition: transform 0.5s ease;
+  color: blue;
+}
+.nothing {
+  transform: none;
+  color: red;
+}

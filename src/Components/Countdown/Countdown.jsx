@@ -2,29 +2,35 @@ import classes from "./Countdown.module.scss";
 
 import { useState } from "react";
 
+import Number from "./Number";
+
 export default function Countdown() {
-  const [countDown, setCountDown] = useState({});
+  const [days, setDays] = useState();
+  const [hours, setHours] = useState();
+  const [minutes, setMinutes] = useState();
+  const [seconds, setSeconds] = useState();
 
   let countDownDate = new Date("Sep 6, 2023 12:00:00").getTime();
 
   setInterval(() => {
     let now = new Date().getTime();
-
     let distance = countDownDate - now;
+    let d = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let s = Math.floor((distance % (1000 * 60)) / 1000);
 
-    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    let hours = Math.floor(
-      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    setCountDown({
-      days: days,
-      hours: hours,
-      minutes: minutes,
-      seconds: seconds,
-    });
+    d != days && setDays(d);
+    h != hours && setHours(h);
+    m != minutes && setMinutes(m);
+    s != seconds && setSeconds(s);
   }, 1000);
-  return <>{countDown.seconds}</>;
+  return (
+    <>
+      <Number number={days} type={"DAYS"}></Number>
+      <Number number={hours} type={"HOURS"}></Number>
+      <Number number={minutes} type={"MINUTES"}></Number>
+      <Number number={seconds} type={"SECONDS"}></Number>
+    </>
+  );
 }
