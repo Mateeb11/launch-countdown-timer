@@ -3,7 +3,7 @@ import classes from "./Countdown.module.scss";
 import { useState } from "react";
 
 export default function Countdown() {
-  const [countDown, setCountDown] = useState();
+  const [countDown, setCountDown] = useState({});
 
   let countDownDate = new Date("Sep 6, 2023 12:00:00").getTime();
 
@@ -19,7 +19,12 @@ export default function Countdown() {
     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    setCountDown(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+    setCountDown({
+      days: days,
+      hours: hours,
+      minutes: minutes,
+      seconds: seconds,
+    });
   }, 1000);
-  return <>{countDown}</>;
+  return <>{countDown.seconds}</>;
 }
