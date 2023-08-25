@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Countdown></Countdown>
-      {/* <img src={prettyHills} alt="" hidden /> */}
+      {/* <img src={prettyHills} alt="hills shape" className="background" hidden /> */}
     </>
   );
 }
