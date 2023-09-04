@@ -3,6 +3,7 @@ import classes from "./Countdown.module.scss";
 import { useState } from "react";
 
 import Number from "./Number";
+import { Title } from "../Title/Title";
 
 export default function Countdown() {
   const [days, setDays] = useState();
@@ -10,7 +11,7 @@ export default function Countdown() {
   const [minutes, setMinutes] = useState();
   const [seconds, setSeconds] = useState();
 
-  let countDownDate = new Date("Sep 6, 2023 12:00:00").getTime();
+  let countDownDate = new Date("Oct 20, 2023 12:00:00").getTime();
 
   setInterval(() => {
     let now = new Date().getTime();
@@ -26,11 +27,14 @@ export default function Countdown() {
     s != seconds && setSeconds(s);
   }, 1000);
   return (
-    <>
-      <Number number={days} type={"DAYS"}></Number>
-      <Number number={hours} type={"HOURS"}></Number>
-      <Number number={minutes} type={"MINUTES"}></Number>
-      <Number number={seconds} type={"SECONDS"}></Number>
-    </>
+    <div className={classes.container}>
+      <Title></Title>
+      <div>
+        <Number number={days} type={"DAYS"}></Number>
+        <Number number={hours} type={"HOURS"}></Number>
+        <Number number={minutes} type={"MINUTES"}></Number>
+        <Number number={seconds} type={"SECONDS"}></Number>
+      </div>
+    </div>
   );
 }
