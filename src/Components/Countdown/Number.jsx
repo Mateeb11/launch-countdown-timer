@@ -7,7 +7,7 @@ export default function Number({ number, type }) {
       <div className={classes.numberContainer}>
         <p className={classes.number}>{number}</p>
       </div>
-      <p>{type}</p>
+      <p className={classes.countdownText}>{type}</p>
     </div>
   );
 }

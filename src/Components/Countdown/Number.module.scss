@@ -60,4 +60,12 @@
       border-radius: 5px;
     }
   }
+
+  .countdownText {
+    font-size: var(--fs-small);
+    font-weight: var(--fw-regular);
+    letter-spacing: 0.375em;
+
+    color: var(--grayish-blue);
+  }
 }
