@@ -29,7 +29,7 @@ export default function Countdown() {
   return (
     <div className={classes.container}>
       <Title></Title>
-      <div>
+      <div className={classes.countdown}>
         <Number number={days} type={"DAYS"}></Number>
         <Number number={hours} type={"HOURS"}></Number>
         <Number number={minutes} type={"MINUTES"}></Number>

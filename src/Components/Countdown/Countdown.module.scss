@@ -1,7 +1,7 @@
 .container {
   position: absolute;
 
-  top: 25%;
+  top: 30%;
   left: 0;
   right: 0;
 
@@ -9,4 +9,16 @@
 
   gap: 1em;
   text-align: center;
+
+  .countdown {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    gap: 1em;
+
+    padding-inline: 1.5em;
+
+    font-size: var(--fs-medium);
+  }
 }
