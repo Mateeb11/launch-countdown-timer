@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@500;600;700&display=swap");
 
 :root {
   // Colors
@@ -20,12 +20,15 @@
   /// Body Copy
 
   --fs-medium: 14px;
+  --fs-semi-medium: 22px;
   --fs-large: 28px;
   --fs-larger: 34px;
 
   /// Font
 
-  --fw-regular: 700;
+  --fw-regular: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
 }
 
 /* makes sizing simpler */

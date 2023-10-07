@@ -6,9 +6,10 @@
     display: grid;
     position: relative;
 
-    padding: 0.5em 0.25em;
+    padding: 0.375em 0.25em;
 
     font-size: var(--fs-larger);
+    font-weight: var(--fw-bold);
 
     color: var(--soft-red);
     background-color: var(--very-dark-blue);
