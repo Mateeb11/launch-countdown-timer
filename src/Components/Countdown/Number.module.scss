@@ -1,6 +1,47 @@
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg) translateY(0%);
+  }
+  25% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: rotateX(20deg);
+  }
+  75% {
+  }
+  100% {
+    transform: rotateX(180deg) translateY(100%);
+  }
+}
+
+.flip .container::before {
+  z-index: 1;
+  animation: linear flip 0.5s forwards;
+}
 .container {
   display: grid;
   gap: 1em;
+
+  position: relative;
+
+  &::before {
+    position: absolute;
+    bottom: 1.65em;
+    height: 36%;
+    width: 100%;
+    z-index: -5;
+
+    content: "";
+
+    background-color: red;
+
+    --mask: radial-gradient(4px at 4px 0, #0000 98%, #000) -4px;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+
+    border-radius: 5px;
+  }
 
   .numberContainer {
     display: grid;
@@ -34,7 +75,7 @@
       content: "";
 
       background-color: var(--dark-desaturated-blue);
-      opacity: 0.3;
+      opacity: 0.375;
 
       --mask: radial-gradient(4px at 4px 100%, #0000 98%, #000) -4px;
       -webkit-mask: var(--mask);
@@ -42,6 +83,7 @@
 
       border-radius: 5px;
     }
+
     &::before {
       position: absolute;
       bottom: 0;
