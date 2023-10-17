@@ -38,14 +38,12 @@
       content: "";
 
       background-color: var(--dark-desaturated-blue);
-      // opacity: 0.3;
 
       --mask: radial-gradient(5px at 5px 100%, #0000 98%, #000) -5px;
       -webkit-mask: var(--mask);
       mask: var(--mask);
 
       border-radius: 5px;
-      // border-bottom: 0.1px solid var(--very-dark-blue);
 
       &::after {
         background-color: #000;
@@ -90,7 +88,6 @@
 
     @media (min-width: 700px) {
       font-size: var(--fs-larger);
-      // padding-inline: 0.5em;
     }
   }
 

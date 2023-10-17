@@ -8,4 +8,12 @@
   justify-content: center;
 
   gap: 2em;
+
+  img {
+    cursor: pointer;
+    &:hover {
+      filter: invert(58%) sepia(54%) saturate(3249%) hue-rotate(309deg)
+        brightness(99%) contrast(98%);
+    }
+  }
 }
