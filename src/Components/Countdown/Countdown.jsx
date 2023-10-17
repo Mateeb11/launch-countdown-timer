@@ -11,7 +11,7 @@ export default function Countdown() {
   const [minutes, setMinutes] = useState();
   const [seconds, setSeconds] = useState();
 
-  let countDownDate = new Date("Oct 20, 2023 12:00:00").getTime();
+  let countDownDate = new Date("Oct 31, 2023 12:00:00").getTime();
 
   setInterval(() => {
     let now = new Date().getTime();
