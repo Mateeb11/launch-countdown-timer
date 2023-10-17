@@ -1,14 +1,13 @@
 import "./App.scss";
 
 import Countdown from "./Components/Countdown/CountDown";
-
-import prettyHills from "./assets/pattern-hills.svg";
+import Social from "./Components/Social/Social";
 
 function App() {
   return (
     <>
       <Countdown></Countdown>
-      {/* <img src={prettyHills} alt="hills shape" className="background" hidden /> */}
+      <Social></Social>
     </>
   );
 }
