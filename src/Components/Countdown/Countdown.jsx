@@ -16,15 +16,23 @@ export default function Countdown() {
   setInterval(() => {
     let now = new Date().getTime();
     let distance = countDownDate - now;
-    let d = Math.floor(distance / (1000 * 60 * 60 * 24));
-    let h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    let s = Math.floor((distance % (1000 * 60)) / 1000);
 
-    d != days && setDays(d);
-    h != hours && setHours(h);
-    m != minutes && setMinutes(m);
-    s != seconds && setSeconds(s);
+    if (distance < 0) {
+      setDays("00");
+      setHours("00");
+      setMinutes("00");
+      setSeconds("00");
+    } else {
+      let d = Math.floor(distance / (1000 * 60 * 60 * 24));
+      let h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let s = Math.floor((distance % (1000 * 60)) / 1000);
+
+      d != days && setDays(d);
+      h != hours && setHours(h);
+      m != minutes && setMinutes(m);
+      s != seconds && setSeconds(s);
+    }
   }, 1000);
   return (
     <div className={classes.container}>

@@ -2,13 +2,17 @@
   display: grid;
   gap: 1em;
 
+  @media (min-width: 700px) {
+    width: 8em;
+  }
+
   .numberContainer {
     display: grid;
     position: relative;
 
     padding: 0.375em 0.25em;
 
-    font-size: var(--fs-larger);
+    font-size: var(--fs-large);
     font-weight: var(--fw-bold);
 
     color: var(--soft-red);
@@ -29,18 +33,23 @@
       position: absolute;
       height: 50%;
       width: 100%;
-      z-index: -1;
+      z-index: -10;
 
       content: "";
 
       background-color: var(--dark-desaturated-blue);
-      opacity: 0.3;
+      // opacity: 0.3;
 
-      --mask: radial-gradient(4px at 4px 100%, #0000 98%, #000) -4px;
+      --mask: radial-gradient(5px at 5px 100%, #0000 98%, #000) -5px;
       -webkit-mask: var(--mask);
       mask: var(--mask);
 
       border-radius: 5px;
+      // border-bottom: 0.1px solid var(--very-dark-blue);
+
+      &::after {
+        background-color: #000;
+      }
     }
     &::before {
       position: absolute;
@@ -53,11 +62,35 @@
 
       background-color: var(--dark-desaturated-blue);
 
-      --mask: radial-gradient(4px at 4px 0, #0000 98%, #000) -4px;
+      --mask: radial-gradient(5px at 5px 0, #0000 98%, #000) -5px;
       -webkit-mask: var(--mask);
       mask: var(--mask);
 
       border-radius: 5px;
+
+      transform: rotateX(20deg) translateY(-2.5%);
+    }
+
+    .overlay {
+      height: 50%;
+      top: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      background-color: var(--dark-desaturated-blue);
+      z-index: 1;
+
+      opacity: 0.4;
+      --mask: radial-gradient(5px at 5px 100%, #0000 98%, #000) -5px;
+      -webkit-mask: var(--mask);
+      mask: var(--mask);
+
+      border-radius: 5px;
+    }
+
+    @media (min-width: 700px) {
+      font-size: var(--fs-larger);
+      // padding-inline: 0.5em;
     }
   }
 
@@ -67,5 +100,9 @@
     letter-spacing: 0.375em;
 
     color: var(--grayish-blue);
+
+    @media (min-width: 700px) {
+      font-size: var(--fs-medium);
+    }
   }
 }
